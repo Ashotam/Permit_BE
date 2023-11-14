@@ -1,0 +1,44 @@
+# baseURL
+@baseURL = http://localhost:3000
+
+###
+# Find All Companies
+GET {{ baseURL }}/companies
+
+###
+# Find Company By Id
+GET {{ baseURL }}/companies/1
+
+###
+# Create Company
+POST {{ baseURL }}/companies
+Content-Type: application/json
+
+{
+    name: 'Just Trucking LLC',
+    DBA: 'just',
+    USDOT: 1415467,
+    adress: '14 15 Linoln rd',
+    city: 'Burbank',
+    state: 'CA',
+    zipCode: '91506',
+}
+
+###
+# Modify Company By Id
+PUT {{ baseURL }}/companies/1
+Content-Type: application/json
+
+{
+   name: 'Just Trucking LLC',
+    DBA: 'just',
+    USDOT: 1415467,
+    adress: '14 15 Linoln rd',
+    city: 'Burbank',
+    state: 'CA',
+    zipCode: '91506',
+}
+
+###
+# Delete Company By Id
+DELETE {{ baseURL }}/companies/1

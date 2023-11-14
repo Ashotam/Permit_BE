@@ -1,0 +1,54 @@
+# baseURL
+@baseURL = http://localhost:3000
+
+###
+# Find All Vehicles
+GET {{ baseURL }}/vehicles
+
+###
+# Find Vehicle By Id
+GET {{ baseURL }}/vehicles/1
+
+###
+# Create Vehicle
+POST {{ baseURL }}/vehicles
+Content-Type: application/json
+
+{
+        unit:'AA111AA',
+        vinNumber: 'AASASAS7ASAS1234',
+        make: 'Dodge',
+        model: 'F250',
+        year: '',
+        licensePlate:'R45476',
+        plateState: 'TX',
+        axle: 3,
+        fuelType:'Disel',
+        unladenWeight:'2000',
+        gvw:'80000',
+        vehicleType:'Track'
+    },
+
+###
+# Modify Vehicle By Id
+PUT {{ baseURL }}/vehicles/1
+Content-Type: application/json
+
+{
+        unit:'BB111BB',
+        vinNumber: 'AASASAS7ASAS1223',
+        make: 'Peterbilt',
+        model: 'F251',
+        year: '',
+        licensePlate:'R45476',
+        plateState: 'TX',
+        axle: 3,
+        fuelType:'Petrol',
+        unladenWeight:'2000',
+        gvw:'54000',
+        vehicleType:'Special Houling Vehicle'
+    },
+
+###
+# Delete Vehicle By Id
+DELETE {{ baseURL }}/vehicles/1
